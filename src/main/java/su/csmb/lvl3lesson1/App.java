@@ -5,14 +5,11 @@ import su.csmb.lvl3lesson1.foodcity.Box;
 import su.csmb.lvl3lesson1.foodcity.Orange;
 import su.csmb.lvl3lesson1.utils.Array;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
 import java.util.logging.Logger;
 
 public class App {
-    static final Logger logger = Logger.getLogger(App.class.getName());
+    private static final Logger logger = Logger.getLogger(App.class.getName());
     public static void main(String[] args) {
         Array arrayTools = new Array();
         /*-----------------------------------------*/
@@ -31,8 +28,8 @@ public class App {
         list = arrayTools.swapRandomTwoElement(arrayTools.arrayToCollection(legacyArrayI));
         logger.info("Array has finish elements: [" + String.join("][", Arrays.toString(list.toArray())) + "]");
         //----------------------------------------------------------------------------------
-        Box boxApple = new Box();
-        boxApple.createWarehouse(new Apple());
+        //Box boxApple = new Box();
+       // boxApple.createWarehouse(new Apple());
         //Box boxOrange = new Box(new Orange());
 
     }
