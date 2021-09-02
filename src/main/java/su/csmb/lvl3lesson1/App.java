@@ -28,9 +28,23 @@ public class App {
         list = arrayTools.swapRandomTwoElement(arrayTools.arrayToCollection(legacyArrayI));
         logger.info("Array has finish elements: [" + String.join("][", Arrays.toString(list.toArray())) + "]");
         //----------------------------------------------------------------------------------
-        //Box boxApple = new Box();
-       // boxApple.createWarehouse(new Apple());
-        //Box boxOrange = new Box(new Orange());
+        Box boxApple = new Box(new Apple(1.0f),3);
+        boxApple.loadWarehouse();
+        logger.info("Weight " + boxApple.getObjectType() + " box: " + boxApple.getWeight());
+        Box boxOrange = new Box(new Orange(1.5f), 5);
+        boxOrange.loadWarehouse();
+        logger.info("Weight " + boxOrange.getObjectType() + " box: " + boxOrange.getWeight());
+        logger.info("Weight equals? " + boxApple.compare(boxOrange));
+        boxApple.removeFromWarehouseByIndex(100);
+        boxApple.addInWarehouse();
+        boxApple.removeFromWarehouseByIndex(1);
+        boxApple.addInWarehouse();
+        Box newBoxApple = new Box(new Apple(1.0f),3);
+        logger.info("Count in old Box: " + boxApple.getWarehouse().size());
+        logger.info("Count in new Box: " + newBoxApple.getWarehouse().size());
+        boxApple.moveBoxToAnother(newBoxApple);
+        logger.info("Count in old Box: " + boxApple.getWarehouse().size());
+        logger.info("Count in new Box: " + newBoxApple.getWarehouse().size());
 
     }
 }
