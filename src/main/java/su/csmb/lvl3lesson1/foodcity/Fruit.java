@@ -1,11 +1,10 @@
 package su.csmb.lvl3lesson1.foodcity;
 
-public class Fruit {
-    protected float weight;
-    protected String brand;
+public abstract class Fruit {
+    private float weight;
 
-    public void setBrand(String brand) {
-        this.brand = brand;
+    public Fruit(float weight) {
+        this.weight = weight;
     }
 
     public float getWeight() {
