@@ -1,9 +1,7 @@
 package su.scmb.lvl3lesson2.dbfactory;
 
-import su.scmb.lvl3lesson2.exception.InvalidFieldType;
-
-import java.io.File;
 import java.sql.Connection;
+import java.util.List;
 import java.util.Map;
 
 public interface Databases<T extends Map> {
@@ -11,18 +9,6 @@ public interface Databases<T extends Map> {
     void createTableFromFile(String ddlFile);
     Connection getConnection();
     void insertRecord(String tableName, T value);
-    default String valueAfterCast(String value, String type) throws InvalidFieldType {
-        String result;
-        switch (type) {
-            case "VARCHAR":
-                result = "'" + value + "'";
-                break;
-            case "INTEGER":
-                result = "" + value;
-                break;
-            default:
-                throw new InvalidFieldType();
-        }
-        return result;
-    }
+    void updateRecord(String tableName, T set, T where);
+    List<String> selectRecord(String tableName, T select, T where);
 }

@@ -19,7 +19,7 @@
                 <artifactId>maven-dependency-plugin</artifactId>
                 <executions>
                     <execution>
-                        <phase>install</phase>
+                        <phase>package</phase>
                         <goals>
                             <goal>copy-dependencies</goal>
                         </goals>
@@ -48,17 +48,10 @@
                 <artifactId>maven-resources-plugin</artifactId>
                 <version>3.2.0</version>
                 <configuration>
-                    <outputDirectory>${basedir}/target/sql</outputDirectory>
-                    <resources>
-                        <resource>
-                            <directory>src/main/resources/sql</directory>
-                        </resource>
-                    </resources>
-                    <outputDirectory>${basedir}/target/config</outputDirectory>
+                    <outputDirectory>${basedir}/target</outputDirectory>
                     <resources>
                         <resource>
                             <directory>src/main/resources/</directory>
-                            <include>db_configuration.cfg</include>
                         </resource>
                     </resources>
                 </configuration>
