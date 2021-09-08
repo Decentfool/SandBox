@@ -1,6 +1,6 @@
-package su.csmb.lvl3lesson2.dbfactory;
+package su.scmb.lvl3lesson2.dbfactory;
 
-import su.csmb.lvl3lesson2.exception.ReservedForFuture;
+import su.scmb.lvl3lesson2.exception.ReservedForFuture;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -11,15 +11,11 @@ public class DatabaseFactory {
     private DatabaseFactory() {
     }
 
-    public Connection getConnection(DatabaseTypes databaseTypes) {
-        Connection connection = null;
+    public Databases getConnection(DatabaseTypes databaseTypes) {
+        Databases databases = null;
         switch (databaseTypes) {
             case ORACLE:
-                try {
-                    connection = DriverManager.getConnection("111", "22", "2");
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
+                databases = new OracleDB();
                 break;
             case MARIADB:
                 try {
@@ -32,7 +28,7 @@ public class DatabaseFactory {
                 throw new IllegalArgumentException("Invalid database type: " + databaseTypes);
 
         }
-        return connection;
+        return databases;
     }
     public static DatabaseFactory getInstance() {
         return SingletonHolder.INSTANCE;

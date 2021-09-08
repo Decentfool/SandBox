@@ -6,7 +6,7 @@
     <groupId>su.scmb</groupId>
     <artifactId>lvl3lesson2</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>Level 3 Lesson 1</name>
+    <name>Level 3 Lesson 2</name>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -38,9 +38,29 @@
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>./lib/</classpathPrefix>
-                            <mainClass>su.csmb.lvl3lesson2.App</mainClass>
+                            <mainClass>su.scmb.lvl3lesson2.App</mainClass>
                         </manifest>
                     </archive>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.2.0</version>
+                <configuration>
+                    <outputDirectory>${basedir}/target/sql</outputDirectory>
+                    <resources>
+                        <resource>
+                            <directory>src/main/resources/sql</directory>
+                        </resource>
+                    </resources>
+                    <outputDirectory>${basedir}/target/config</outputDirectory>
+                    <resources>
+                        <resource>
+                            <directory>src/main/resources/</directory>
+                            <include>db_configuration.cfg</include>
+                        </resource>
+                    </resources>
                 </configuration>
             </plugin>
         </plugins>

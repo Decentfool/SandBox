@@ -1,4 +1,4 @@
-package su.csmb.lvl3lesson2.dbfactory;
+package su.scmb.lvl3lesson2.dbfactory;
 
 public enum DatabaseTypes {
     ORACLE,
