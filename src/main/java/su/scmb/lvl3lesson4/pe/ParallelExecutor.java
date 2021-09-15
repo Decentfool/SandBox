@@ -8,7 +8,7 @@ import java.util.logging.Logger;
 
 public class ParallelExecutor {
     private static final Logger LOGGER = Logger.getLogger(ParallelExecutor.class.getName());
-    private final HashMap<Integer, Object> monitors = new HashMap<>();
+    private final Map<Integer, Object> monitors = new ConcurrentHashMap<>();
     private ExecutorService threadPool;
 
     public void initialParallelDegree(int count) {
@@ -26,11 +26,9 @@ public class ParallelExecutor {
 
     public Object acquireMonitor(int numberOfMonitors) {
         if (monitors.get(numberOfMonitors) != null) {
-            //LOGGER.info("Monitor for thread " + Thread.currentThread().getName() + " was found");
             return monitors.get(numberOfMonitors);
         } else {
             monitors.putIfAbsent(numberOfMonitors, new Object());
-            LOGGER.info("Monitor with index " + numberOfMonitors + " for thread " + Thread.currentThread().getName() + " not found, creating new monitor");
             return monitors.get(numberOfMonitors);
         }
     }

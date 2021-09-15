@@ -6,10 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="SandBox" />
         <module name="SandBox1" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="SandBox" target="14" />
       <module name="SandBox1" target="14" />
     </bytecodeTargetLevel>
   </component>
