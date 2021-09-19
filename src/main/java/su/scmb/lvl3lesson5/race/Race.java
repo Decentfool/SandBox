@@ -1,9 +1,9 @@
-package su.scmb.lvl3lesson5;
+package su.scmb.lvl3lesson5.race;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class Race implements IRace {
+public class Race {
     private ArrayList<Stage> stages;
 
     public ArrayList<Stage> getStages() {

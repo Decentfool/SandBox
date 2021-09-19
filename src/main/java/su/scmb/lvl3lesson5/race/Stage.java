@@ -1,4 +1,4 @@
-package su.scmb.lvl3lesson5;
+package su.scmb.lvl3lesson5.race;
 
 public abstract class Stage {
     protected int length;

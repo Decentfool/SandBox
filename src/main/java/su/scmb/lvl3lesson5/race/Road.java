@@ -1,4 +1,4 @@
-package su.scmb.lvl3lesson5;
+package su.scmb.lvl3lesson5.race;
 
 public class Road extends Stage {
     public Road(int length) {
