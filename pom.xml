@@ -4,9 +4,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>su.scmb</groupId>
-    <artifactId>lvl3lesson4</artifactId>
+    <artifactId>lvl3lesson5</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>Level 3 Lesson 4</name>
+    <name>Level 3 Lesson 5</name>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -22,7 +22,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>su.scmb.lvl3lesson4.App</mainClass>
+                            <mainClass>su.scmb.lvl3lesson5.App</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
